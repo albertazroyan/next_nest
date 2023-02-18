@@ -1,10 +1,10 @@
 import { RouterType } from '../../custom-types/index'
-import Home from '../views/home'
+import HomePage  from '../views/home'
 
 const pagesData: RouterType[] = [
   {
     path: '',
-    element: <Home />,
+    element: <HomePage />,
     title: 'home'
   }
 ]
