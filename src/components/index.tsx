@@ -1,3 +1,1 @@
-export { default as Home } from './local/home-page'
-
-// export { default as Home } from './wargame'
+export { default as AdminSetup } from './local/admin-panel'
