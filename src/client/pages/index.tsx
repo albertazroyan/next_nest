@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { RouterType } from '../../custom-types/index'
-import pagesData from './admin-panel/admin-panel'
+import pagesData from './routers/routers'
 
 const Router = () => {
   const adminRoutes = pagesData.map(({ path, title, element }: RouterType) => {
