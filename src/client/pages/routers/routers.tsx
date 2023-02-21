@@ -1,15 +1,16 @@
 import { RouterType } from '../../../custom-types/index'
-import AdminPanel from '../../views/admin-setup'
-import HomePage from '../../views/home-setup'
+import AdminPanel from '../../views/admin-page'
+import HomePage from '../../views/home-page'
+import { ADMIN_ROUTES, HOME_ROUTES } from 'src/configs'
 
 const pagesData: RouterType[] = [
   {
-    path: '/',
+    path: HOME_ROUTES,
     element: <HomePage />,
     title: 'home'
   },
   {
-    path: '/admin',
+    path: ADMIN_ROUTES,
     element: <AdminPanel />,
     title: 'admin'
   }
