@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import HomePage from './index'
+import HomeSetup from './index'
+import '@testing-library/jest-dom'
 
 test('renders learn react link', () => {
-  render(<HomePage />)
+  render(<HomeSetup />)
   const linkElement = screen.getByText(/Home Page/i)
 
   expect(linkElement).toBeInTheDocument()

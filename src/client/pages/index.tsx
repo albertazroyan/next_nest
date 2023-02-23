@@ -1,13 +1,9 @@
-import { Route, Routes } from 'react-router-dom'
-import { RouterType } from '../../custom-types/index'
+import { Routes } from 'react-router-dom'
 import { NavigationSetup } from 'src/components/'
-import pagesData from './routers/routers'
+import RoutesPage from './routers'
 import navigateData from './navigate/navigate'
 
 const Router = () => {
-  const RoutesPage = pagesData.map(({ path, title, element }: RouterType) => {
-    return <Route key={title} path={`/${path}`} element={element} />
-  })
 
   return (
     <div>
