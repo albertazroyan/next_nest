@@ -9,7 +9,6 @@ const NavigationSetup: React.FC<PropTypes> = ({ navigates }) => {
     textDecoration: 'underline',
   }
 
-  console.log('data', navigates)
   return (
     <div className={styles.nav}>
       <nav>
