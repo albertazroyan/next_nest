@@ -1,4 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
+
+export type BookDocument = Book & Document;
 
 @Schema()
 export class Book {
@@ -45,4 +48,4 @@ export class Book {
   img_urls: string[];
 }
 
-export const Book_Schema = SchemaFactory;
+export const Book_Schema = SchemaFactory.createForClass(Book);
