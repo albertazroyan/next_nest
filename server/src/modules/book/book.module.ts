@@ -10,4 +10,4 @@ import { BookService } from './book.service';
   controllers: [BookeController],
   providers: [BookService],
 })
-export class QuizModule {}
+export class BookModule {}
