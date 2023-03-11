@@ -1,99 +1,79 @@
 {
-  "env": {
-        "browser": true,
-        "es2021": true,
-	"jest": true // Add this line!
-    },
-    "extends": [
-        "next/core-web-vitals",
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier" // Add this line!
-    ],
-    "overrides": [
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "react-hooks",
-        "@typescript-eslint",
-        "prettier"
-    ],
-    "settings": {
-        "import/resolver": {
-          "typescript": {}
-        }
-    },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier" // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
+  ],
+
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    // I suggest you add those two rules:
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "semi": [2, "never"],
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    // Allows us to hoist variables and functions which I am a fan of, functions not variables that is.
+    // Too strict for my case, sometimes I need an any type
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      // Prevents us from using any delimiter for interface properties.
+      "multiline": {
+        "delimiter": "none",
+        "requireLast": false
+      },
+      "singleline": {
+        "delimiter": "comma",
+        "requireLast": false
+      }
+    }],
+    "@typescript-eslint/indent": "off",
+    // This is the job of StandardJS, they are competing rules so we turn off the Typescript one.
+    // "@typescript-eslint/no-unused-vars": [2, {
+    //   "args": "none"
+    // }],
+    // On the fence about using this one, sometimes we import a package that is never used directly.
+    "node/no-unsupported-features/es-syntax": "off",
+    // Allows us to use Import and Export keywords.
+    "react/jsx-uses-react": 1,
+    // Treats  React imports as used variables in JSX/TSX files
+    "react/jsx-uses-vars": 1, // Treats component names as used variables in JSX/TSX files
+    "react/react-in-jsx-scope": "off",
+    "camelcase": "error",
+    "no-duplicate-imports": "error",
+    "comma-dangle": ["error", "only-multiline"],
+    // "no-console": 1,
+    "no-constant-condition": 2,
+    "no-duplicate-case": 2,
+    "no-useless-constructor": "off",
+    "require-yield": 0,
+    "strict": ["error", "global"],
+    "no-unused-vars": ["error", { "vars": "all", "args": "none" }],
+    "quotes": ["error", "single", { "avoidEscape": true } ],
+    "space-before-function-paren": [2, "always"],   
+    "array-bracket-newline": 0,
+    "array-bracket-spacing": [ 2, "never" ],
+    "object-curly-spacing": [ 2, "always" ],
+    "newline-after-var": [ 2, "always" ],
+    "space-in-parens": [ 2, "never" ],
+    "block-spacing": 0,
+    "keyword-spacing": ["error", { "after": true, "before": true }],
+    "max-lines": ["error", {"max": 1000, "skipBlankLines": false}],
+    "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     
-    "rules": {
-        "semi": [2, "never"],
-        "@typescript-eslint/ban-ts-ignore": "off",
-        "@typescript-eslint/no-use-before-define": "off",
-        // Allows us to hoist variables and functions which I am a fan of, functions not variables that is.
-        "@typescript-eslint/no-explicit-any": "off",
-        // Too strict for my case, sometimes I need an any type
-        "@typescript-eslint/member-delimiter-style": ["error", {
-          // Prevents us from using any delimiter for interface properties.
-          "multiline": {
-            "delimiter": "none",
-            "requireLast": false
-          },
-          "singleline": {
-            "delimiter": "comma",
-            "requireLast": false
-          }
-        }],
-        "@typescript-eslint/indent": "off",
-        // This is the job of StandardJS, they are competing rules so we turn off the Typescript one.
-        "@typescript-eslint/no-unused-vars": [2, {
-          "args": "none"
-        }],
-        // On the fence about using this one, sometimes we import a package that is never used directly.
-        "node/no-unsupported-features/es-syntax": "off",
-        // Allows us to use Import and Export keywords.
-        "react/jsx-uses-react": 1,
-        // Treats  React imports as used variables in JSX/TSX files
-        "react/jsx-uses-vars": 1, // Treats component names as used variables in JSX/TSX files
-        "react/react-in-jsx-scope": "off",
-        "camelcase": "error",
-        "no-duplicate-imports": "error",
-        "comma-dangle": ["error", "only-multiline"],
-        // "no-console": 1,
-        "no-constant-condition": 2,
-        "no-duplicate-case": 2,
-        "no-useless-constructor": "off",
-        "require-yield": 0,
-        "strict": ["error", "global"],
-        "no-unused-vars": ["error", { "vars": "all", "args": "none" }],
-        "quotes": ["error", "single", { "avoidEscape": true } ],
-        "space-before-function-paren": [2, "always"],   
-        "array-bracket-newline": 0,
-        "array-bracket-spacing": [ 2, "never" ],
-        "object-curly-spacing": [ 2, "always" ],
-        "newline-after-var": [ 2, "always" ],
-        "space-in-parens": [ 2, "never" ],
-        "block-spacing": 0,
-        "keyword-spacing": ["error", { "after": true, "before": true }],
-        "max-lines": ["error", {"max": 1000, "skipBlankLines": false}],
-        "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
-        
-        "indent": ["error", 2],
-        "spaced-comment": ["error", "always", {
-            "line": {
-                "markers": ["/"],
-                "exceptions": ["-", "+"]
-            },
-            "block": {
-                "markers": ["!"],
-                "exceptions": ["*"],
-                "balanced": true
-            }
-        }]
-    }
+    "indent": ["error", 2],
+    "spaced-comment": ["error", "always", {
+        "line": {
+            "markers": ["/"],
+            "exceptions": ["-", "+"]
+        },
+        "block": {
+            "markers": ["!"],
+            "exceptions": ["*"],
+            "balanced": true
+        }
+    }]
+    
+  }
 }
