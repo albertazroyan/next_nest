@@ -1,0 +1,1 @@
+export { default as AdminSetup } from './local/organisms/admin-panel'
