@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "test:unit": "jest --passWithNoTests",
     "covereg": "jest --covereg",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
