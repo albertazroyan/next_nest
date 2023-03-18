@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders homepage unchanged 1`] = `
+exports[`renders bookPage unchanged 1`] = `
 <div>
   <h1
     class="demo"
   >
-    Admin Panel
+    Book page
   </h1>
 </div>
 `;

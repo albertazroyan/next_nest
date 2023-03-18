@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders adminPage unchanged 1`] = `
+<div>
+  <div
+    class="demo"
+  >
+    <h1
+      class="demo"
+    >
+      Book page
+    </h1>
+  </div>
+</div>
+`;
