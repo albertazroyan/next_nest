@@ -11,6 +11,7 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const customJestConfig = {
   preset: 'ts-jest',
+  setupFilesAfterEnv: ['<rootDir>/jest/setupJest.js'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest'
