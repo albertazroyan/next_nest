@@ -1,7 +1,7 @@
 import '@/styles/globals.css'
 import { Provider } from 'react-redux';
 import type { AppProps } from 'next/app'
-import { store } from '../reduxAndCreator/index';
+import { store } from '../actionAndReducer/index';
 
 function MyApp({
   Component, pageProps,

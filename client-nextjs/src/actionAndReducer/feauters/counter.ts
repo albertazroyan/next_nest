@@ -20,10 +20,11 @@ export const counterSlice = createSlice({
 // In this example, 'increment', 'decrement' and 'incrementByAmount' are actions. They can be triggered from outside this slice, anywhere in the app. 
 // So for example, if we make a dispatch to the 'increment' action here from the index page, it will get triggered and change the value of the state from 0 to 1.
   reducers: {
-    increment: state => {
+    increment: (state, action) => {
+      console.log(action.payload)
 // Redux Toolkit allows us to write "mutating" logic in reducers. 
 // It doesn't actually mutate the state because it uses the Immer library, which detects changes to a "draft state" and produces a brand new immutable state based off those changes
-      state.value++;
+      state.value + action.payload;
     },
     decrement: state => {
       state.value--;
