@@ -1,5 +1,5 @@
-import { AppDispatch } from './app-dispatch';
+import { AppDispatch } from './app-dispatch'
 
 export type {
-    AppDispatch,
-};
+  AppDispatch,
+}
