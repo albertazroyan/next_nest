@@ -1,5 +1,5 @@
 interface CssExports {
-    'demo': string
+  'demo': string
 }
   
 export let cssExports: CssExports

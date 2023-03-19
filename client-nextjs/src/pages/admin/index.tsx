@@ -1,10 +1,10 @@
 import { AdminSetup } from 'src/components'
-import { useSelector, useDispatch } from 'react-redux'
-import { increment } from '../../actionAndReducer/feauters/actionCounter'
+import { useAppDispatch, useAppSelector } from 'src/actionAndReducer'
+import { increment } from 'src/actionAndReducer/feauters/actionCounter'
 
 const Admin = () => {
-  const count = useSelector((state: any) => state.counter.value)
-  const dispatch = useDispatch()
+  const count = useAppSelector((state) => state.counter.value)
+  const dispatch = useAppDispatch()
 
   console.log('count', count)
 

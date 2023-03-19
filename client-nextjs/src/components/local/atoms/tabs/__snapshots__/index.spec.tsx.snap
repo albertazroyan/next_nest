@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tabs renders 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <div
+      class="item active"
+    >
+      book
+    </div>
+    <div
+      class="item"
+    >
+      settings
+    </div>
+  </div>
+</div>
+`;
