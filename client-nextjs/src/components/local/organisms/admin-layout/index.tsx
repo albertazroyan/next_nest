@@ -42,7 +42,7 @@ export const AdminLayout: React.FC<PropTypes> = ({ children, onTabChange, data, 
   return (
     <div className={styles.main}>
       <div className={styles.container}>
-        {!data ? renderContainer() : renderLoading()}
+        {data ? renderContainer() : renderLoading()}
       </div>
     </div>
   )

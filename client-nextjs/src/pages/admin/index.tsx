@@ -1,6 +1,6 @@
 import { AdminSetup } from 'src/components'
 import { useAppDispatch, useAppSelector } from 'src/actionAndReducer'
-import { increment } from 'src/actionAndReducer/feauters/actionCounter'
+import { increment } from 'src/actionAndReducer/dbAdmin/admin_actionCreators'
 
 const Admin = () => {
   const count = useAppSelector((state) => state.counter.value)

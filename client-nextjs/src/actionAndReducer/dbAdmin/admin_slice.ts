@@ -6,10 +6,12 @@ import type { RootState } from '../index'
 
 // declaring the types for our state
 export type CounterState = {
+  data: string[]
   value: number
 };
 
 const initialState: CounterState = {
+  data: [],
   value: 0,
 }
 

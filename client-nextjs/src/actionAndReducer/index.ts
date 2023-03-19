@@ -8,7 +8,7 @@ import {
   useDispatch,
   useSelector,
 } from 'react-redux'
-import counterReducer from './feauters/counter'
+import counterReducer from './dbAdmin/admin_slice'
 
 export const store = configureStore({
   reducer: {

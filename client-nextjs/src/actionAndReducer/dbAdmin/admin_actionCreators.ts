@@ -1,4 +1,4 @@
-import { counterSlice } from './counter'
+import { counterSlice } from './admin_slice'
 import { AppDispatch } from '../../custom-types/index'
 
 export const increment = (count: number) =>

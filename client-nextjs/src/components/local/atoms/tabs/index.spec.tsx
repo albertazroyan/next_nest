@@ -5,7 +5,7 @@ import { AdminTabs } from '../../../../configs'
 
 import Tabs from './index'
 
-it('tabs renders', () => {
+it('tabs renders correctly', () => {
 
   const contentTabs = [
     AdminTabs.Book,
