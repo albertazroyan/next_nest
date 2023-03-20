@@ -1,1 +1,0 @@
-export { default as NavigateMock } from './navigate.mock'
