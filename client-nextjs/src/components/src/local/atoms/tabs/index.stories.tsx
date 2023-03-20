@@ -3,7 +3,7 @@ import React from 'react'
 import Tabs from './index'
 import { withKnobs } from '@storybook/addon-knobs'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { AdminTabs } from '../../../../configs'
+import { AdminTabs } from '../../../../../configs'
 
 const wrapper: React.FC =   (Story: any) => (
   <div style={{ height: '200px' }}>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AdminTabs } from '../../../../configs'
+import { AdminTabs } from '../../../../../configs'
 
 /* Import Styles */
 import styles from './styles.module.scss'

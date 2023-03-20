@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { render } from '@testing-library/react'
-import { AdminTabs } from '../../../../configs'
+import { AdminTabs } from '../../../../../configs'
 
 import Tabs from './index'
 
