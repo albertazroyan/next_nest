@@ -2,6 +2,8 @@ import {
   createSlice,
   PayloadAction,
 } from '@reduxjs/toolkit'
+import { DefaultAdminSettingsData } from '@/configs'
+import { Admin } from '@/custom-types'
 import type { RootState } from '../index'
 
 // declaring the types for our state
@@ -10,8 +12,8 @@ export type CounterState = {
   value: number
 };
 
-const initialState: CounterState = {
-  data: [],
+const initialState: Admin = {
+  data: { ...DefaultAdminSettingsData },
   value: 0,
 }
 

@@ -9,7 +9,9 @@ interface Book {
   barcode: string
   language: string
   newness: string
-  printing_cover: string
+  printing_cover_am: string
+  printing_cover_ru: string
+  printing_cover_en: string
   publication_data: number
   pages: number
   img_urls: string[]
