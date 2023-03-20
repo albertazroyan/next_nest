@@ -32,14 +32,6 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@reduxjs/toolkit": "^1.9.3",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-webpack5": "^6.5.16",
-    "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react-redux": "^7.1.25",
@@ -52,7 +44,6 @@
     "prettier": "^2.8.4",
     "react-redux": "^8.0.5",
     "redux": "^4.2.1",
-    "sass": "^1.59.2",
-    "storybook-addon-next": "^1.7.3"
+    "sass": "^1.59.2"
   }
 }
