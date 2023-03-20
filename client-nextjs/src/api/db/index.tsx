@@ -7,19 +7,19 @@ import {
 } from './types'
 
 import { databasePath, serverPath } from '@/configs/global'
+import { Book } from '@/custom-types'
 export class DbProvider implements DbProviderInterface {
   private provider: ProviderDbInterface
   name: string
 
   constructor (databasePath: string) {
-    console.log('databasePath', databasePath)
     this.provider = {
       db: databasePath
     }
     this.name = databasePath
   }
   
-  get (query: string): Promise<any | { status: number }> {
+  get (query: string): Promise<Book | { status: number }> {
     return new Promise((resolve) => {
       fetch(serverPath + '/' + this.getDbName() + '/' + query)
         .then(res => res.json() as Promise<FetchData>)

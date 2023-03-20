@@ -15,5 +15,7 @@ export interface FetchReferenc {
 }
 
 export interface FetchData {
+  data: Book
+  msg: string
   status: number
 }
