@@ -11,7 +11,7 @@ interface Book {
   newness: string
   printing_cover_am: string
   printing_cover_ru: string
-  printing_cover_en: string
+  printing_cover_en: stringincrement
   publication_data: number
   pages: number
   img_urls: string[]
