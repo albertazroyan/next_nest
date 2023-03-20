@@ -23,10 +23,24 @@ export class DbProvider implements DbProviderInterface {
     return new Promise((resolve) => {
       fetch(serverPath + '/' + this.getDbName() + '/' + query)
         .then(res => res.json() as Promise<FetchData>)
-        .then(({ status }) => {
-          if (status === 0) resolve(status)
+        .then(({ msg, data }) => {
+          if (msg === 'ok') resolve(data)
           else resolve({ status: 404 })
         }).catch((onRejected: any) => console.warn('Server failed' , query, onRejected))
+    })
+  }
+
+  put (doc: Book): Promise<Book> {
+    return new Promise((resolve) => {
+      fetch(serverPath + this.getDbName(), {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(doc)
+      }).then((res) => {
+        resolve(res.json())
+      })
     })
   }
   
