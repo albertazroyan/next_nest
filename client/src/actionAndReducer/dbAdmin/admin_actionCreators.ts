@@ -1,7 +1,12 @@
-import { counterSlice } from './admin_slice'
+import { adminSlice } from './admin_slice'
 import { AppDispatch } from '../../custom-types/index'
 
-export const increment = (count: number) =>
+export const getAdminDb = (count: number) =>
   async (dispatch: AppDispatch): Promise<void> => {
-    dispatch(counterSlice.actions.increment(count))
+    dispatch(adminSlice.actions.currentAdminDb(count))
+  }
+
+export const setCurrentTab = (tab: string) =>
+  async (dispatch: AppDispatch): Promise<void> => {
+    dispatch(adminSlice.actions.currentTab(tab))
   }

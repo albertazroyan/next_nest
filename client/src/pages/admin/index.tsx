@@ -1,17 +1,37 @@
 import { AdminSetup } from 'src/components'
 import { useAppDispatch, useAppSelector } from 'src/actionAndReducer'
-import { increment } from 'src/actionAndReducer/dbAdmin/admin_actionCreators'
+import { getAdminDb, setCurrentTab } from 'src/actionAndReducer/dbAdmin/admin_actionCreators'
+import React, { useEffect } from 'react'
 
-const Admin = () => {
-  const count = useAppSelector((state) => state.counter.value)
+// // This gets called on every request
+// export async function getServerSideProps () {
+//   // Fetch data from external API
+//   const res = await fetch(`https://.../data`)
+//   const data = await res.json()
+
+//   // Pass data to the page via props
+//   return { props: { name: 'cola' } }
+// }
+
+const Admin: React.FC = () => {
+  const admin = useAppSelector((state) => state.admin)
   const dispatch = useAppDispatch()
+  const { data } = admin
+  const tabs = Object.keys(data)
 
-  console.log('count', count)
+  useEffect(() => {
+    getAdminDb(10)(dispatch)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  console.log('admin', admin)
+  const onChangeTab = (tab: string) => {
+    setCurrentTab(tab)(dispatch)
+  }
 
+  console.log('tabs', tabs)
   return (
     <>
-      <button onClick={() => increment(10)(dispatch)}>hello</button>
-      <AdminSetup />
+      <AdminSetup tabs={tabs} admin={admin} onChangeTab={onChangeTab} />
     </>
   )
 }

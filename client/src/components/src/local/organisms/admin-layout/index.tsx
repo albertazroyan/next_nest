@@ -9,14 +9,15 @@ import PropTypes from './types/props'
 import Tabs from '../../atoms/tabs'
 
 /* Render component */
-export const AdminLayout: React.FC<PropTypes> = ({ children, onTabChange, data, tabs = [], dataChanged, activeTab = '' }) => {
+export const AdminLayout: React.FC<PropTypes> = ({ children, onChangeTab, admin, tabs = [], dataChanged, activeTab = '' }) => {
    
   const handleTabChange = (changedTab: string, key: number, e:  React.MouseEvent<HTMLElement> | undefined): void => {
-    if (typeof onTabChange === 'function') {
-      onTabChange(changedTab, key, e)
+    if (typeof onChangeTab === 'function') {
+      onChangeTab(changedTab, key, e)
     }
   }
 
+  console.log('admin', admin)
   const contentTabs = [
     AdminTabs.Book,
     AdminTabs.Settings
@@ -26,7 +27,7 @@ export const AdminLayout: React.FC<PropTypes> = ({ children, onTabChange, data, 
     return (
       <>
         <div className={styles.header}>
-          {tabs.length === 0 && <Tabs activeTab={activeTab} onChange={handleTabChange} tabs={contentTabs} changed={dataChanged} />}
+          {tabs.length !== 0 && <Tabs activeTab={activeTab} onChange={handleTabChange} tabs={contentTabs} changed={dataChanged} />}
         </div>
         <div className={styles.content}>
           {children}
@@ -35,14 +36,13 @@ export const AdminLayout: React.FC<PropTypes> = ({ children, onTabChange, data, 
     )
   }
   const renderLoading = (): React.ReactNode => (
-    // TODO add some loader
     <div className={styles.loading}>Loading</div>
   )
 
   return (
     <div className={styles.main}>
       <div className={styles.container}>
-        {data ? renderContainer() : renderLoading()}
+        {admin ? renderContainer() : renderLoading()}
       </div>
     </div>
   )

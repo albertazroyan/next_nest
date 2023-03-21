@@ -11,7 +11,6 @@ import styles from './styles.module.scss'
 
 import { kebabCase } from 'lodash'
 
-/* Render component */
 export const Tabs: React.FC<PropTypes> = ({ onChange, tabs, activeTab = '', changed }) => {
   const useAsDefault = activeTab || tabs[0]
   const [active, setActive] = useState(useAsDefault || '')
@@ -25,9 +24,6 @@ export const Tabs: React.FC<PropTypes> = ({ onChange, tabs, activeTab = '', chan
     }
   }
 
-  /** we had a camel case tab (platformType) which was being presented as PLATFORMTYPE,
-   * so we'll convert it to kebaby case first
-   */
   const tidyTabName = (tab: string): string => {
     const camel = kebabCase(tab)
     const dropSpace = camel.replace('-', ' ')
