@@ -36,10 +36,13 @@ export class Book {
   newness: string;
 
   @Prop()
-  printing_cover: string;
+  printing_cover_am: string;
 
   @Prop()
-  publication_data: number;
+  printing_cover_ru: string;
+
+  @Prop()
+  publication_data_en: number;
 
   @Prop()
   pages: number;

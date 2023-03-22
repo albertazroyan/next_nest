@@ -1,4 +1,4 @@
-import { AdminSetup } from 'src/components'
+import { AdminSetup } from '@/components'
 import { useAppDispatch, useAppSelector } from 'src/actionAndReducer'
 import { getAdminDb, setCurrentTab } from 'src/actionAndReducer/dbAdmin/admin_actionCreators'
 import React, { useEffect } from 'react'
