@@ -76,7 +76,7 @@ const SettingBook: React.FC<Props> = ({ products }) => {
         key: index,
         author: data.author_am,
         language: data.language,
-        publisher: data.publisher_am,
+        publisher: data.publisher,
         page: data.pages
       }
     })

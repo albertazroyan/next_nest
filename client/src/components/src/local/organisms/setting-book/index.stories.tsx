@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta  } from '@storybook/react'
+import { BookMock } from '@/mocks'
 import SettingBook from './index'
 
 export default {
@@ -6,6 +7,6 @@ export default {
   component: SettingBook
 } as ComponentMeta<typeof SettingBook>
 
-const Templete: ComponentStory<typeof SettingBook> = () => <SettingBook />
+const Templete: ComponentStory<typeof SettingBook> = () => <SettingBook products={BookMock} />
 
 export const Primary = Templete.bind({})

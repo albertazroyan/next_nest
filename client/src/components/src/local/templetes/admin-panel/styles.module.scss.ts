@@ -1,6 +1,9 @@
 interface CssExports {
   'demo': string
 }
-  
-export let cssExports: CssExports
+
+const cssExports: CssExports = {
+  demo: 'demo-class',
+}
+
 export default cssExports
