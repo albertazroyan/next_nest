@@ -3,7 +3,7 @@ import { BookMock } from '../../../../../mocks'
 import SettingBook from './index'
 
 export default {
-  title: 'adminSetup',
+  title: 'settingbook',
   component: SettingBook
 } as ComponentMeta<typeof SettingBook>
 

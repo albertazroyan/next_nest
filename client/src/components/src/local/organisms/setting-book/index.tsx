@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import styles from './styles.module.scss'
 
 import type { ColumnsType } from 'antd/es/table'
+import PropTypes from './types/props'
+import DataType from './types/data'
 import {
   // MenuFoldOutlined,
   // MenuUnfoldOutlined,
@@ -20,7 +22,6 @@ import { Layout, Menu, theme, MenuProps, Table,
   // Form,
   // Input
 } from 'antd'
-import { Book } from '@/custom-types'
 
 const {
   // Header,
@@ -41,21 +42,7 @@ const items: MenuProps['items'] = [
   label: `nav ${index + 1}`,
 }))
 
-interface DataType {
-  key: React.Key
-  author: string
-  publisher: string
-  page: number
-  language: string
-}
-
-interface Props {
-  products: Book[]
-}
-
-const SettingBook: React.FC<Props> = ({ products }) => {
-  const [rows, setRows] = useState<DataType[]>([])
-  const [columns, setColumns] = useState<ColumnsType<DataType>>([])
+const SettingBook: React.FC<PropTypes> = ({ products }) => {
 
   const [
     collapsed,
@@ -68,10 +55,8 @@ const SettingBook: React.FC<Props> = ({ products }) => {
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e)
   }
-  
-  useEffect(() => {
-  
-    const row = products.map((data, index) => {
+  const { rows, columns } = useMemo<{rows: DataType[], columns: ColumnsType<DataType> }>(() => {
+    const rows = products.map((data, index) => {
       return {
         key: index,
         author: data.author_am,
@@ -81,8 +66,7 @@ const SettingBook: React.FC<Props> = ({ products }) => {
       }
     })
 
-    setRows(row)
-    const column: ColumnsType<DataType> = [
+    const columns: ColumnsType<DataType> = [
       { title: 'Author', dataIndex: 'author', key: 'author' },
       Table.EXPAND_COLUMN,
       { title: 'Publisher', dataIndex: 'publisher', key: 'publisher', defaultSortOrder: 'descend', sorter: (a, b) => a.page - b.page },
@@ -90,8 +74,9 @@ const SettingBook: React.FC<Props> = ({ products }) => {
       { title: 'Page', dataIndex: 'page', key: 'page' ,   defaultSortOrder: 'descend', sorter: (a, b) => a.page - b.page },
       { title: 'Language', dataIndex: 'language', key: 'language'  }
     ]
-
-    setColumns(column)
+    
+    return { rows , columns }
+  
   }, [products])
 
   return (
