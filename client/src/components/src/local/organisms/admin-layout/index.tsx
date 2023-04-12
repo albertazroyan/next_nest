@@ -11,13 +11,14 @@ import Tabs from '../../atoms/tabs'
 /* Render component */
 export const AdminLayout: React.FC<PropTypes> = ({ children, onChangeTab, admin, tabs = [], dataChanged, activeTab = '' }) => {
    
+  // Handle tab change event 
   const handleTabChange = (changedTab: string, key: number, e:  React.MouseEvent<HTMLElement> | undefined): void => {
     if (typeof onChangeTab === 'function') {
       onChangeTab(changedTab, key, e)
     }
   }
 
-  console.log('admin', admin)
+  // Define the content tabs
   const contentTabs = [
     AdminTabs.Book,
     AdminTabs.Settings
@@ -35,6 +36,8 @@ export const AdminLayout: React.FC<PropTypes> = ({ children, onChangeTab, admin,
       </>
     )
   }
+
+  // Render loading message if admin prop is false
   const renderLoading = (): React.ReactNode => (
     <div className={styles.loading}>Loading</div>
   )

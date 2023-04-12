@@ -12,9 +12,13 @@ import styles from './styles.module.scss'
 import { kebabCase } from 'lodash'
 
 export const Tabs: React.FC<PropTypes> = ({ onChange, tabs, activeTab = '', changed }) => {
+  // Determine the default active tab to use
   const useAsDefault = activeTab || tabs[0]
-  const [active, setActive] = useState(useAsDefault || '')
 
+  // State to hold the currently active tab
+  const [active, setActive] = useState(useAsDefault || '')
+  
+  // Handler for clicking a tab
   const handleClick = (tab: string, key: number, e: React.MouseEvent<HTMLElement>): void => {
     if (active !== tab) {
       setActive(tab)
@@ -23,7 +27,8 @@ export const Tabs: React.FC<PropTypes> = ({ onChange, tabs, activeTab = '', chan
       }
     }
   }
-
+  
+  // Helper function to tidy up the tab name (e.g. "My Tab Name" => "my-tab-name")
   const tidyTabName = (tab: string): string => {
     const camel = kebabCase(tab)
     const dropSpace = camel.replace('-', ' ')
@@ -31,7 +36,8 @@ export const Tabs: React.FC<PropTypes> = ({ onChange, tabs, activeTab = '', chan
     
     return dropUnderScore
   }
-
+  
+  // Render the tabs
   return (
     <div className={styles.main}>
       {

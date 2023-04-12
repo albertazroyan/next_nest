@@ -8,9 +8,13 @@ import { DefaultAdminSettingsData } from '@/configs'
 
 // import DbProvider from '@/api/db'
 
+// Define a functional component AdminSetup with props admin, onChangeTab and tabs
 const AdminSetup: React.FC<PropTypes> = ({ admin, onChangeTab, tabs }) => {
+  
+  // Destructure currentActiveTab from admin object
   const currentActiveTab = admin.currentTab
-
+  
+  // Define testData variable and assign DefaultAdminSettingsData.book
   const testData = DefaultAdminSettingsData.book
   
   return (

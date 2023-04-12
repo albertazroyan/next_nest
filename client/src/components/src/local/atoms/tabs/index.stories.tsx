@@ -5,6 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { AdminTabs } from '../../../../../configs'
 
+// Define a wrapper component to be used as a decorator for the story
 const wrapper: React.FC =   (Story: any) => (
   <div style={{ height: '200px' }}>
     <Story />
@@ -30,6 +31,8 @@ const onChange = (changedTab: string, key: number, e:  React.MouseEvent<HTMLElem
   }
 }
 
+// Define a story using the component and props
 const Templete: ComponentStory<typeof Tabs> = () => <Tabs onChange={onChange} tabs={contentTabs} />
 
+// Bind the props to the story
 export const Primary = Templete.bind({})
