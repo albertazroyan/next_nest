@@ -1,4 +1,5 @@
 interface Book {
+  _id: string
   author_am: string
   publisher: string
   weight: number

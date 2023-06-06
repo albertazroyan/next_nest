@@ -2,14 +2,14 @@ import React, { useMemo } from 'react'
 import styles from './styles.module.scss'
 import MaterialTable , { Column } from '@material-table/core'
 import PropTypes from './types/props'
-import DataType from './types/data'
+import DataType, { TableType } from './types/data'
 
 const SettingBook: React.FC<PropTypes> = ({ products }) => {
-
-  const { rows, columns } = useMemo<{rows: DataType[], columns: Column<DataType> }>(()  => {
-    const rows = products.map((data, index) => {
+  
+  const { rows, columns } = useMemo<TableType>((): TableType => {
+    const rows = products.map((data) => {
       return {
-        key: index,
+        id: data._id,
         author: data.author_am,
         language: data.language,
         publisher: data.publisher,
@@ -17,19 +17,19 @@ const SettingBook: React.FC<PropTypes> = ({ products }) => {
       }
     })
 
-    const columns = [
+    const columns: Column<DataType>[] = [
       { title: 'Author', field: 'author' },
       { title: 'Publisher', field: 'publisher' },
       { title: 'Page', field: 'page' },
       { title: 'Language', field: 'language'  }
     ]
     
-    return { rows , columns }
+    return { rows, columns }
   
   }, [products])
 
   const DetailPane = ({ rowData }: {rowData: DataType}) => {
-    return <div>{rowData.author}</div>
+    return <div>{rowData.id}</div>
   }
   
   return (
@@ -39,6 +39,15 @@ const SettingBook: React.FC<PropTypes> = ({ products }) => {
         data={rows}
         title="Demo Title"
         detailPanel={DetailPane}
+        options={{
+          search: true,
+          paging: true,
+          pageSize: 20,
+          emptyRowsWhenPaging: false,
+          pageSizeOptions: [10, 20, 40],
+          columnsButton: true,
+          rowStyle: { fontSize: '80%' }
+        }}
       />
     </div>
   )

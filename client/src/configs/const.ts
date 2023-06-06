@@ -2,6 +2,7 @@ import { AdminData } from '@/custom-types'
 export const DefaultAdminSettingsData : AdminData = {
   book: [
     {
+      _id: '1',
       author_am: 'Խոդեդան',
       publisher: 'Դաշտենց Խ.',
       weight: 0.78000,
@@ -14,6 +15,7 @@ export const DefaultAdminSettingsData : AdminData = {
       img_urls: ['uniknown.jpg']
     },
     {
+      _id: '2',
       author_am: 'Խոդեդան',
       publisher: 'Դաշտենց Խ.',
       weight: 0.78000,
@@ -26,6 +28,7 @@ export const DefaultAdminSettingsData : AdminData = {
       img_urls: ['uniknown.jpg']
     },
     {
+      _id: '3',
       author_am: 'Մարկ Քոնրադ',
       publisher: 'Վենետիկ',
       weight: 0.89000,
@@ -38,6 +41,7 @@ export const DefaultAdminSettingsData : AdminData = {
       img_urls: ['book1.jpg']
     },
     {
+      _id: '4',
       author_am: 'Էրնեստ Հեմինգուեյ',
       publisher: 'Գեղարվես',
       weight: 0.65000,
@@ -50,6 +54,7 @@ export const DefaultAdminSettingsData : AdminData = {
       img_urls: ['book2.jpg']
     },
     {
+      _id: '5',
       author_am: 'Տոնյան Գ.',
       publisher: 'Վերնաշապիկ',
       weight: 0.95000,
@@ -62,6 +67,7 @@ export const DefaultAdminSettingsData : AdminData = {
       img_urls: ['book3.jpg']
     },
     {
+      _id: '6',
       author_am: 'Սամուել Բերիան',
       publisher: 'Դատակ',
       weight: 0.76000,
